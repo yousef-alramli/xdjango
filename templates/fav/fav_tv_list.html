@@ -1,0 +1,25 @@
+{% extends "_base.html" %} {% block title %} favorites {% endblock %} 
+
+{% block content %}
+
+<h1>favorites page</h1>
+<button onclick="window.location.href='/create'">Create Favorites</button>
+<ol>
+
+  {% for fav in object_list %}
+  <hr>
+    <li>
+        <ul>
+            <a href="{% url 'fav_tv_detail' fav.pk %}">
+                <li><b>Name: </b>{{fav.name}}</li>
+            </a>
+                <li><b>Type: </b>{{fav.sort}}</li>
+                <li><b>Description: </b>{{fav.description}}</li>
+                <li><b>Visitor: </b>{{fav.visitor}}</li>
+        </ul>
+    </li>
+  {% endfor %}
+
+</ul>
+
+{% endblock %}
