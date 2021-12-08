@@ -3,11 +3,11 @@
 {% block title %} create favorites {% endblock %}
 {% block content %}
 
-<h1>create page</h1>
 <form action="" method="post">
+    <h1 class="title">create page</h1>
     {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Create">
+    {{form}}
+    <input type="submit" value="Create" class="submit">
 </form>
 
 {% endblock %}
